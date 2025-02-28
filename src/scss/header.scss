@@ -1,0 +1,29 @@
+.header {
+    padding: 20px 0;
+
+    .header-container {
+        background-color: #0048FD;
+        border-radius: 50px;
+        border: 1px solid $white-color;
+
+        .content-wrapper {
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
+
+
+.icon img {
+    width: 50px;
+    aspect-ratio: 1/1;
+}
+
+#clock {
+    font-family: 'Coiny';
+    font-size: $clock;
+    color: $white-color;
+}
+

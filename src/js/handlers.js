@@ -1,9 +1,8 @@
 import { modalViewElement, modalOverlayElement } from './variables.js'
-import { buildPopUpDeleteTask } from './helpers.js'
 
 function handleCloseModal() {
-    modalViewElement.style.display = 'none'
-     modalOverlayElement.style.display = 'none'
+    modalViewElement.classList.remove('active')
+    modalOverlayElement.classList.remove('active')
 }
 
 function handleConfirmDelete() {
@@ -11,9 +10,8 @@ function handleConfirmDelete() {
 } // in process
 
 function handleDeleteAll() {
-    modalViewElement.innerHTML = buildPopUpDeleteTask()
-    modalViewElement.style.display = 'block'
-    modalOverlayElement.style.display = 'flex'
+    modalViewElement.classList.add('active')
+    modalOverlayElement.classList.add('active')
     document.getElementById('confirm-delete').addEventListener('click', handleConfirmDelete)
     document.getElementById('cancel-delete').addEventListener('click', handleCloseModal)
 }

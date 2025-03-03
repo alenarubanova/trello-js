@@ -1,5 +1,6 @@
 @mixin btn{
     all: unset;
+    position: relative;
     padding: 10px 0;
     width: 100%;
     display: block;
@@ -24,8 +25,10 @@
 
 
 @mixin btnModalDelete {
+    display: non;
+    position: absolute;
+    top: calc(100% + 10px);
     all: unset;
-    display: block;
     width: 25px;
     padding: 10px;
     background-color: $background-color;

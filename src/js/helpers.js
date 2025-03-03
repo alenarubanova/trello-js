@@ -1,15 +1,3 @@
-function buildPopUpDeleteTask() {
-    return `
-      <div class="modal-content">
-        <span class="modal-text">Warning!</span>
-        <div class="button-wrapper">
-          <button class="modal-button" id="confirm-delete" type="button">Yes</button>
-          <button class="modal-button" id="cancel-delete" type="button">No</button>
-        </div>
-      </div>
-    `
-}
-
 function buildPopUpAddTask() {
     return `
         <form action="" method="post">
@@ -30,6 +18,5 @@ function buildPopUpAddTask() {
 }
 
 export {
-    buildPopUpDeleteTask, 
-    buildPopUpAddTask
+    buildPopUpAddTask,
 }

@@ -1,0 +1,107 @@
+@mixin btn{
+    all: unset;
+    padding: 10px 0;
+    width: 100%;
+    display: block;
+    background-color: $button-color;
+    font-family: 'Coiny';
+    font-size: $button;
+    text-transform: uppercase;
+    text-align: center;
+    color: $white-color;
+    margin: auto;
+    border-top: 1px solid $white-color;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    &:hover {
+        background-color: $button-hover;
+    }
+    &:active{
+        box-shadow: 0px 0px 30px 0px $white-color;
+    }
+}
+
+
+@mixin btnModalDelete {
+    all: unset;
+    display: block;
+    width: 25px;
+    padding: 10px;
+    background-color: $background-color;
+    font-size: $modal-button;
+    text-transform: uppercase;
+    text-align: center;
+    color: $white-color;
+    border-radius: 5px;
+    border: 1px solid $white-color;
+    margin: auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    &:hover {
+        background-color: $modal-button-hover;
+    }
+    &:active{
+        box-shadow: 0px 0px 30px 0px $white-color;
+    }
+}
+
+
+@mixin btnModalAdd{
+    all: unset;
+    width: 60px;
+    padding: 10px;
+    background-color: $background-color;
+    font-size: $modal-button;
+    text-transform: uppercase;
+    text-align: center;
+    color: $white-color;
+    border-radius: 5px;
+    border: 1px solid $white-color;
+    margin: auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    &:hover {
+        background-color: $modal-button-hover;
+    }
+    &:active{
+        box-shadow: 0px 0px 30px 0px $white-color;
+    }
+}
+
+
+@mixin inputModal{
+    display: block;
+    padding: 3px 0;
+    width: 100%;
+    font-family: 'Coiny';
+    border-radius: 10px;
+    border: 1px solid $white-color;
+    background-color: $background-tasks-color;
+    margin-bottom: 15px;
+    text-align: center;
+    color: $white-color;
+    &::placeholder{
+        color: $white-color;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+@mixin selectInput {
+    width: 80px;
+    padding: 10px;
+    font-size: 12px;
+    font-family: 'Coiny';
+    color: $white-color;
+    background-color: $background-tasks-color;
+    border: 1px solid $white-color;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+}

@@ -1,0 +1,31 @@
+.tasks {
+    padding: 10px 0;
+}
+
+.tasks-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 30px;
+    .task{
+        padding: 10px 0 0;
+        background-color: $background-tasks-color;
+        border-radius: 20px;
+        border: 1px solid $white-color;
+        .tasks-desc {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            .task-title, .task-count {
+                font-family: 'Coiny';
+                color: $white-color;
+                font-size: $task-desc;
+            }
+        }
+        .task-content {
+            margin-bottom: 50px;
+        }
+        .task-btn{
+            @include btn;
+        }
+    }
+}

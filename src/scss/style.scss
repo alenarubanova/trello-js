@@ -1,6 +1,9 @@
 @import './variables';
 @import './fonts';
+@import './mixins';
 @import './header.scss';
+@import './tasks.scss';
+@import './modal.scss';
 
 * {
   padding: 0;
@@ -15,7 +18,7 @@ body {
 }
 
 html {
-  font-family: 'Nunito', 'sans-serif';
+  font-family: 'Coiny', 'sans-serif';
 }
 
 .container {

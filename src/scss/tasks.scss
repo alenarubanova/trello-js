@@ -11,6 +11,7 @@
         background-color: $background-tasks-color;
         border-radius: 20px;
         border: 1px solid $white-color;
+        position: relative;
         .tasks-desc {
             display: flex;
             justify-content: space-around;
@@ -22,10 +23,12 @@
             }
         }
         .task-content {
-            margin-bottom: 50px;
+            margin-bottom: 100px;
         }
         .task-btn{
             @include btn;
+            position: absolute;
+            bottom: 0;
         }
     }
 }

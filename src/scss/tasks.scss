@@ -4,6 +4,7 @@
 
 .tasks-wrapper {
     display: grid;
+    align-items: flex-start;
     grid-template-columns: repeat(3, 1fr);
     gap: 50px 30px;
     .task{
@@ -16,6 +17,7 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
+            margin-bottom: 20px;
             .task-title, .task-count {
                 font-family: 'Coiny';
                 color: $white-color;
@@ -24,6 +26,9 @@
         }
         .task-content {
             margin-bottom: 100px;
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
         .task-btn{
             @include btn;

@@ -23,6 +23,7 @@
                 padding: 3px 3px;
                 background-color: $background-modal-add;
                 text-align: center;
+                color: $background-button-yes;
                 border: 1px solid $white-color;
                 border-radius: 5px;
             }
@@ -58,6 +59,6 @@
 
 .task-header {
     display: flex;
-    justify-content: space-between; // Разместить title слева, time справа
+    justify-content: space-between; 
     align-items: center;
 }

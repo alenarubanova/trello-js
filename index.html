@@ -57,8 +57,8 @@
 
   <dialog id="modal">
     <form method="dialog" id="form">
-      <input type="text" id="title" name="title" placeholder="Title">
-      <input type="text" id="description" name="description" placeholder="Description">
+      <input type="text" id="title" name="title" class=" default" placeholder="Title">
+      <input type="text" id="description" name="description" class="default" placeholder="Description">
       <select id="users" name="user" aria-label="Select user">
         <option value="" disabled selected>Loading users...</option>
       </select>
@@ -66,6 +66,7 @@
       <button class="modal-button" id="addTask" type="submit">Confirm</button>
     </form>
   </dialog>
+  
 
   <div id="modal-delete" class="modal-delete">
     <div class="modal-content">
@@ -78,6 +79,13 @@
   </div>
 
   <div id="modal-overlay" class="modal-overlay"></div>
+
+  <div id="modal-warning" class="modal-warning">
+    <div class="modal-content">
+      <span class="modal-text">Finish what you started!</span>
+      <button class="modal-button" id="cancel-warning" type="button">OK</button>
+    </div>
+  </div>
 
   <script type="module" src="./src/js/main.js"></script>
 </body>

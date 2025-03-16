@@ -19,6 +19,10 @@ const buttonAddElement = document.getElementById('task-btn__start')
 const modalAddElement = document.getElementById('modal')
 const buttonCancelAddElement = document.getElementById('closeModal')
 
+// Modal warning
+const modalWarningElement = document.querySelector('#modal-warning')
+const buttonCancelWarningElement = document.querySelector('#cancel-warning')
+
 // Select user
 const selectElement = document.querySelector('#users')
 
@@ -36,10 +40,12 @@ const divTaskProgressElement = document.querySelector('#task-content__progress')
 const divTaskDoneElement = document.querySelector('#task-content__done')
 
 // Change status
-const selectStatusElement = document.querySelector('.task-status-select')
+
 
 // Counter Task 
-
+const spanCountStart = document.querySelector('.task-count__start')
+const spanCountProgress = document.querySelector('.task-count__progress')
+const spanCountDone = document.querySelector('.task-count__done')
 
 //Export variables
 export {
@@ -53,6 +59,8 @@ export {
     buttonAddElement,
     modalAddElement,
     buttonCancelAddElement,
+    modalWarningElement,
+    buttonCancelWarningElement,
     selectElement,
     formElement,
     inputTitleElement,
@@ -61,4 +69,7 @@ export {
     divTaskStartElement,
     divTaskProgressElement,
     divTaskDoneElement,
+    spanCountStart,
+    spanCountProgress,
+    spanCountDone,
 }

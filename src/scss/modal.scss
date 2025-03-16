@@ -107,9 +107,13 @@
         transform: translate(-50%, -50%) scale(1);
     }
 
-    #title,
-    #description {
+    .default {
         @include inputModal;
+    }
+
+    .error {
+        border: 1px solid $background-button-yes;
+        box-shadow: 0 0 10px rgba(183, 3, 3, 0.5);
     }
 
     .modal-button {
@@ -138,5 +142,47 @@
 
     select {
         @include selectInput;
+    }
+}
+
+.modal-warning {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background-color: $background-modal;
+    border: 1px solid $white-color;
+    width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+    pointer-events: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 4;
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .modal-text {
+            font-family: 'Coiny';
+            font-size: $modal-title;
+            color: $white-color;
+        }
+    }
+    .modal-button {
+        @include btnModalAdd;
+        background-color: $background-button-no;
+        transition: background-color 0.5s ease, transform 0.5s ease;
+        &:hover {
+            background-color: $background-button-no-hover;
+            transform: scale(1.03);
+        }
     }
 }

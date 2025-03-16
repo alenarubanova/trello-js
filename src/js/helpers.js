@@ -1,5 +1,7 @@
-import { selectElement, divTaskStartElement, divTaskProgressElement, divTaskDoneElement} from "./variables.js"
+import { state } from "./main.js"
+import { selectElement, divTaskStartElement, divTaskProgressElement, divTaskDoneElement, spanCountStart, spanCountProgress, spanCountDone, modalWarningElement, modalOverlayElement, modalAddElement} from "./variables.js"
 
+// Build Task
 function buildTemplateTask({ title, description, time, user, id, status }) {
     return `
            <div class="task-container" data-id="${id}">
@@ -13,7 +15,7 @@ function buildTemplateTask({ title, description, time, user, id, status }) {
                   <span class="task-user task-text">${user}</span>
                 </div>
                 <div class="task-buttons">
-                  <button class="task-edit task-button" type='button'>Edit</button>
+                  <button class="task-edit task-button" type="button" data-role="edit">Edit</button>
                   <button class="task-delete task-button" type="button" data-role="remove">Delete</button>
                   <select class="task-status-select" data-id="${id}">
                         <option value="start" ${status === 'start' ? 'selected' : ''}>Start</option>
@@ -61,8 +63,58 @@ function render(tasks = []) {
     })
 }
 
+
+// Validate form
+function validateForm(titleElement, descriptionElement, selectElement) {
+    let isValid = true
+
+    if (titleElement.value.trim() === '') {
+        titleElement.classList.add('error');
+        isValid = false
+    } else {
+        titleElement.classList.remove('error')
+    }
+
+    if (descriptionElement.value.trim() === '') {
+        descriptionElement.classList.add('error')
+        isValid = false
+    } else {
+        descriptionElement.classList.remove('error')
+    }
+
+    if (selectElement.selectedIndex <= 0) { 
+        selectElement.classList.add('error')
+        isValid = false
+    } else {
+        selectElement.classList.remove('error')
+    }
+
+    return isValid
+}
+
+
+// Counter
+function updateCount() {
+    const countStart = state.tasks.filter(task => task.status === 'start').length
+    const countProgress = state.tasks.filter(task => task.status === 'progress').length
+    const countDone = state.tasks.filter(task => task.status === 'done').length
+
+    spanCountStart.textContent = countStart
+    spanCountProgress.textContent = countProgress
+    spanCountDone.textContent = countDone
+}
+
+// Warning Modal
+function openWarningModal() {
+    modalWarningElement.classList.add('active')
+    modalOverlayElement.classList.add('active')
+}
+
 export {
     buildTemplateTask,
     loadUsers,
     render,
+    validateForm,
+    updateCount,
+    openWarningModal,
 }

@@ -18,59 +18,75 @@
       </div>
     </div>
   </header>
-  <!-- <header class="header">
-    <div class="container header-container">
-      <div class="header-wrapper">
-        <a href="#" class="logo">
-          <img src="./public/trello-icon.svg" alt="Trello" class="trello-image">
-        </a>
-        <div class="trello-time">12:35</div>
-      </div>
-    </div>
-  </header>
 
   <section class="tasks">
-    <div class="container tasks-container">
+    <div class="container">
       <div class="tasks-wrapper">
 
-        <div class="tasks-start__wrapper">
-          <div class="task-description">
-            <h2 class="tasks-title__start">Todo</h2>
-            <span class="tasks-counter">2</span>
+        <div class="task tasks-start">
+          <div class="tasks-desc">
+            <h3 class="task-title task-title__start">Todo:</h3>
+            <span class="task-count task-count__start">0</span>
           </div>
-
-          <div class="tasks-start">
-            <div class="task-wrapper">
-              <h3 class="task-title">Title</h3>
-              <div class="task-desc">
-                <p>Description</p>
-              </div>
-              <span class="task-user">User</span>
-              <span class="task-time"></span>
-            </div>
-            <button type="submit" class="btn-add">Add todo</button>
+          <div class="task-content" id="task-content__start">
           </div>
-
-          <div class="tasks-start__wrapper">
-            <div class="task-description">
-              <h2 class="tasks-title__start">Todo</h2>
-              <span class="tasks-counter">2</span>
-            </div>
-
-            <div class="tasks-start">
-              <div class="task-wrapper">
-                <h3 class="task-title">Title</h3>
-                <div class="task-desc">
-                  <p>Description</p>
-                </div>
-                <span class="task-user">User</span>
-                <span class="task-time"></span>
-              </div>
-              <button type="submit" class="btn-add">Add todo</button>
-            </div>
-          </div>
+          <button class="task-btn" id="task-btn__start" type="submit">Add todo</button>
         </div>
-  </section> -->
+
+        <div class="task tasks-progress">
+          <div class="tasks-desc">
+            <h3 class="task-title task-title__progress">In progress:</h3>
+            <span class="task-count task-count__progress">0</span>
+          </div>
+          <div class="task-content" id="task-content__progress"></div>
+        </div>
+        <div class="task tasks-done">
+          <div class="tasks-desc">
+            <h3 class="task-title task-title__done">Done:</h3>
+            <span class="task-count task-count__done">0</span>
+          </div>
+          <div class="task-content" id="task-content__done"></div>
+          <button class="task-btn" id="task-btn__delete" type="button">Delete All</button>
+        </div>
+      </div>
+
+    </div>
+    </div>
+
+  </section>
+
+  <dialog id="modal">
+    <form method="dialog" id="form">
+      <input type="text" id="title" name="title" class=" default" placeholder="Title">
+      <input type="text" id="description" name="description" class="default" placeholder="Description">
+      <select id="users" name="user" aria-label="Select user">
+        <option value="" disabled selected>Loading users...</option>
+      </select>
+      <button class="modal-button" id="closeModal" type="button">Cancel</button>
+      <button class="modal-button" id="addTask" type="submit">Confirm</button>
+    </form>
+  </dialog>
+  
+
+  <div id="modal-delete" class="modal-delete">
+    <div class="modal-content">
+      <span class="modal-text">Do you want to delete?</span>
+      <div class="button-wrapper">
+        <button class="modal-button" id="confirm-delete" type="button">Yes</button>
+        <button class="modal-button" id="cancel-delete" type="button">No</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-overlay" class="modal-overlay"></div>
+
+  <div id="modal-warning" class="modal-warning">
+    <div class="modal-content">
+      <span class="modal-text">Finish what you started!</span>
+      <button class="modal-button" id="cancel-warning" type="button">OK</button>
+    </div>
+  </div>
+
   <script type="module" src="./src/js/main.js"></script>
 </body>
 

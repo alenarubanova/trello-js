@@ -1,0 +1,39 @@
+.tasks {
+    padding: 10px 0;
+}
+
+.tasks-wrapper {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 30px;
+    .task{
+        padding: 10px 0 0;
+        background-color: $background-tasks-color;
+        border-radius: 20px;
+        border: 1px solid $white-color;
+        position: relative;
+        .tasks-desc {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 20px;
+            .task-title, .task-count {
+                font-family: 'Coiny';
+                color: $white-color;
+                font-size: $task-desc;
+            }
+        }
+        .task-content {
+            margin-bottom: 100px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        .task-btn{
+            @include btn;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+}

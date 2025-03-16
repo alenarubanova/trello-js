@@ -1,0 +1,64 @@
+.task-container {
+    width: 80%;
+    margin: auto;
+    background-color: $background-button-yes;
+    border: 1px solid $white-color;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    .task-wrapper {
+        display: flex;
+        flex-direction: column;
+        .task-content {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin-bottom: 10px;
+            .task-text {
+                @include taskText;
+                margin-bottom: 5px;
+            }
+            .task-title {
+                width: 60%;
+                padding: 3px 3px;
+                background-color: $background-modal-add;
+                text-align: center;
+                color: $background-button-yes;
+                border: 1px solid $white-color;
+                border-radius: 5px;
+            }
+            .task-time {
+                @include taskText;
+                text-align: center;
+                width: 30%;
+                padding: 3px 3px;
+                background-color: $background-color;
+                border-radius: 5px;
+                border: 1px solid $white-color;
+            }
+        }
+        .task-buttons {
+            gap: 5px;
+            margin: auto;
+            .task-button {
+                @include btnTask;
+            }
+            .task-status-select {
+                @include btnTask;
+                padding: 7px;
+                &:focus {
+                    outline: none;
+                    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+                }
+
+            }
+        }
+    }
+}
+
+
+.task-header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}

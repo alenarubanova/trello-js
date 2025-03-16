@@ -1,5 +1,5 @@
 import { state } from "./main.js"
-import { selectElement, divTaskStartElement, divTaskProgressElement, divTaskDoneElement, spanCountStart, spanCountProgress, spanCountDone, modalWarningElement, modalOverlayElement, modalAddElement} from "./variables.js"
+import { selectElement, divTaskStartElement, divTaskProgressElement, divTaskDoneElement, spanCountStart, spanCountProgress, spanCountDone, modalWarningElement, modalOverlayElement } from "./variables.js"
 
 // Build Task
 function buildTemplateTask({ title, description, time, user, id, status }) {

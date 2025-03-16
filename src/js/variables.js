@@ -7,7 +7,6 @@ const modalOverlayElement = document.getElementById('modal-overlay')
 // Button Delete Task
 const divTasksWrapper = document.querySelector('.tasks-wrapper')
 
-
 //Modal Delete All
 const buttonDeleteAllElement = document.getElementById('task-btn__delete')
 const modalViewElement = document.getElementById('modal-delete')
@@ -38,9 +37,6 @@ const divTaskContent = document.querySelector('.task-content')
 const divTaskStartElement = document.querySelector('#task-content__start')
 const divTaskProgressElement = document.querySelector('#task-content__progress')
 const divTaskDoneElement = document.querySelector('#task-content__done')
-
-// Change status
-
 
 // Counter Task 
 const spanCountStart = document.querySelector('.task-count__start')

@@ -37,7 +37,6 @@ function handleAddTask(event) {
     modalOverlayElement.classList.add('active')
 }
 
-
 // Delete Task
 function handleClickButtonDelete(event) {
     const target = event.target
@@ -53,7 +52,6 @@ function handleClickButtonDelete(event) {
         updateCount()
     }
 }
-
 
 function handleConfirmDelete() {
     state.tasks = state.tasks.filter(task => task.status !== 'done')

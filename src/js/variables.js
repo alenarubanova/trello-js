@@ -13,6 +13,10 @@ const modalViewElement = document.getElementById('modal-delete')
 const buttonConfirmDeleteElement = document.getElementById('confirm-delete')
 const buttonCancelDeleteElement = document.getElementById('cancel-delete')
 
+// Delete Task 
+const buttonCancelDeleteTaskElement = document.querySelector('#cancel-delete-task')
+const buttonConfirmDeleteTaskElement = document.querySelector('#confirm-delete-task')
+
 // Modal Add Task
 const buttonAddElement = document.getElementById('task-btn__start')
 const modalAddElement = document.getElementById('modal')
@@ -32,6 +36,7 @@ const inputDescriptionElement = document.querySelector('#description')
 
 //Delete Task
 const divTaskContent = document.querySelector('.task-content')
+const modalDeleteTaskElement = document.querySelector('#modal-delete-task') 
 
 // Status Task
 const divTaskStartElement = document.querySelector('#task-content__start')
@@ -52,6 +57,7 @@ export {
     modalViewElement,
     buttonConfirmDeleteElement,
     buttonCancelDeleteElement,
+    buttonCancelDeleteTaskElement,
     buttonAddElement,
     modalAddElement,
     buttonCancelAddElement,
@@ -62,10 +68,12 @@ export {
     inputTitleElement,
     inputDescriptionElement,
     divTaskContent,
+    modalDeleteTaskElement,
     divTaskStartElement,
     divTaskProgressElement,
     divTaskDoneElement,
     spanCountStart,
     spanCountProgress,
     spanCountDone,
+    buttonConfirmDeleteTaskElement,
 }

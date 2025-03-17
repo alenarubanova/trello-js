@@ -1,5 +1,5 @@
 import { state } from './main.js'
-import { modalViewElement, modalOverlayElement, modalAddElement, inputTitleElement, inputDescriptionElement, formElement, modalWarningElement } from './variables.js'
+import { modalViewElement, modalOverlayElement, modalAddElement, inputTitleElement, inputDescriptionElement, formElement, modalWarningElement, modalDeleteTaskElement } from './variables.js'
 import { render, validateForm, updateCount, openWarningModal } from './helpers.js'
 import { Task } from './class.js'
 import { setDataToStorage } from './storage.js'
@@ -23,6 +23,25 @@ function handleDeleteAll() {
     modalOverlayElement.classList.add('active')
 }
 
+//Delete task
+// function handleDeleteTask() {
+//     modalDeleteTaskElement.classList.add('active')
+//     modalOverlayElement.classList.add('active')
+// }
+function handleDeleteTask(taskId) {
+    console.log("Открываем модалку для задачи с ID:", taskId)
+
+    modalDeleteTaskElement.dataset.id = taskId // Запоминаем ID задачи в модалке
+    modalDeleteTaskElement.classList.add('active')
+    modalOverlayElement.classList.add('active')
+}
+
+
+function handleCloseModalDeleteTask() {
+    modalOverlayElement.classList.remove('active')
+    modalDeleteTaskElement.classList.remove('active')
+}
+
 // Warning Modal
 function handleCancelWarning() {
     modalWarningElement.classList.remove('active')
@@ -44,15 +63,29 @@ function handleClickButtonDelete(event) {
     if (role === 'remove') {
         const taskElement = target.closest('.task-container')
         if (!taskElement) return
-        const id = taskElement.dataset.id
-        state.tasks = state.tasks.filter(task => task.id != Number(id))
-        setDataToStorage(state.tasks)
+        
+        const id = taskElement.dataset.id 
 
-        render(state.tasks)
-        updateCount()
+        handleDeleteTask(id)
     }
 }
 
+function handleClickButtonConfirm() {
+    const id = Number(modalDeleteTaskElement.dataset.id) 
+
+    if (isNaN(id)) return 
+
+    
+    state.tasks = state.tasks.filter(task => task.id !== id)
+
+    setDataToStorage(state.tasks) 
+    render(state.tasks)           
+    updateCount()          
+    handleCloseModalDeleteTask()
+}
+
+
+// Delete All
 function handleConfirmDelete() {
     state.tasks = state.tasks.filter(task => task.status !== 'done')
     setDataToStorage(state.tasks)
@@ -98,7 +131,7 @@ function handleClickButtonEdit(event) {
 
 // Submit form
 function handleSubmitForm(event) {
-    event.preventDefault();
+    event.preventDefault()
 
     const title = inputTitleElement.value.trim()
     const description = inputDescriptionElement.value.trim()
@@ -136,7 +169,6 @@ function handleCancelTask() {
     setTimeout(() => modalAddElement.close(), 300)
 }
 
-
 // Change Status
 function handleTaskStatusChange(event) {
     const target = event.target
@@ -162,7 +194,6 @@ function handleTaskStatusChange(event) {
 }
 
 
-
 // Export
 export {
     handleCloseModal,
@@ -176,5 +207,8 @@ export {
     handleClickButtonEdit,
     handleCancelTask,
     handleTaskStatusChange,
+    handleDeleteTask,
+    handleCloseModalDeleteTask,
+    handleClickButtonConfirm,
 }
 

@@ -62,7 +62,7 @@
             @include btnModalDelete;
         }
 
-        #confirm-delete {
+        #confirm-delete, #confirm-delete-task {
             background-color: $background-button-yes;
             transition: background-color 0.5s ease, transform 0.5s ease;
 
@@ -72,7 +72,7 @@
             }
         }
 
-        #cancel-delete {
+        #cancel-delete, #cancel-delete-task{
             background-color: $background-button-no;
             transition: background-color 0.5s ease, transform 0.5s ease;
 
@@ -83,6 +83,8 @@
         }
     }
 }
+
+
 
 #modal {
     position: fixed;

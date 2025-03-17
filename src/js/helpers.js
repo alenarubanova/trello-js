@@ -92,7 +92,6 @@ function validateForm(titleElement, descriptionElement, selectElement) {
     return isValid
 }
 
-
 // Counter
 function updateCount() {
     const countStart = state.tasks.filter(task => task.status === 'start').length
